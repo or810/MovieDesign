@@ -24,7 +24,7 @@ public class App {
 
         Predicate<Client> predicate = (someClient -> {
             for(Tuple<Integer, MovieMedia> tuple : someClient.getRentedMovies().values()) {
-                if(MovieStore.getDay() - tuple.x >= 5)
+                if(MovieStore.getDay() - tuple.x < 5)
                     return true;
             }
             return false;
